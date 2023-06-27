@@ -1,0 +1,24 @@
+{
+  "name": "customlogo_svg",
+  "version": "1.0.0",
+  "description": "create cumstom logo as SVG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsaagal78/customLogo_SVG.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsaagal78/customLogo_SVG/issues"
+  },
+  "homepage": "https://github.com/hsaagal78/customLogo_SVG#readme",
+  "dependencies": {
+    "dayjs": "^1.11.8",
+    "inquirer": "^8.2.5",
+    "uuid": "^9.0.0"
+  }
+}
