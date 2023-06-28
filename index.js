@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const dayjs = require('dayjs');
 const fs = require('fs');
 const { v4 } = require ('uuid');
-const ShapeLogo = require('./shapes');
+const {ShapeLogo,Triangle,Circle, Rectangle} = require('./shapes');
 const databaseShape = require('./models/dataBaseShapes');
 const logo = require('./logo.svg');
 
@@ -34,7 +34,7 @@ function showChoices() {
           type: 'list',
           message: 'Choose the shape',
           name: 'shapeOption',
-          choices: ['circle', 'triangle', 'rectangle'],
+          choices: ['Circle', 'Triangle', 'Rectangle'],
         },
       ])
       .then((answer) => {
@@ -53,14 +53,22 @@ function showChoices() {
   }
   
   function createLogo(userName, threeCharacters, colorText, colorShape, shapeOption) {
-    const shape = new ShapeLogo(shapeOption, colorShape);
-    const shapeSvg = shape.render();
+    const shapeClasses = {
+      Circle,
+      Triangle,
+      Rectangle
+    };
+    const ShapeClass= shapeClasses[shapeOption];
+    const shape = new ShapeClass (shapeOption, colorShape);
+    const shapeSvg =shape.shapeRenderResult;
+    
     console.log(shapeSvg);
   
     const lSvg = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-        <text x="150" y="100" font-size="48" fill="${colorText}" text-anchor="middle" dominant-baseline="middle">${threeCharacters}</text>
+      <svg  
+        xmlns="http://www.w3.org/2000/svg" width="300" height="200">
         ${shapeSvg}
+        <text x="150" y="100" font-size="48" fill="${colorText}" text-anchor="middle" dominant-baseline="middle">${threeCharacters}</text>
       </svg>
     `;
   
