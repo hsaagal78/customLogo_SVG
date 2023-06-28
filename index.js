@@ -2,7 +2,8 @@ const inquirer = require('inquirer');
 const dayjs = require('dayjs');
 const fs = require('fs');
 const { v4 } = require ('uuid');
-const {ShapeLogo,Triangle,Circle, Rectangle} = require('./shapes');
+const {ShapeLogo,Triangle,Circle, Rectangle} = require('./lib/shapes');
+const { describe, it, expect } = require('jest');
 const databaseShape = require('./models/dataBaseShapes');
 const logo = require('./logo.svg');
 
