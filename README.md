@@ -47,11 +47,11 @@ https://github.com/Hsaagal78/customLogo_SVG
 
 ## Screenshots
 
-![Screenshot](/picture/Screenshot.circle.png)
+![Screenshot](/lib/pictures/Screenshot.circle.png)
 
-![Screenshot](/picture/Screenshot.triangle.png)
+![Screenshot](/lib/pictures/Screenshot.triangle.png)
 
-![Screenshot](/picture/Screenshot.retangle.png)
+![Screenshot](/lib/pictures/Screenshot.retangle.png)
 
 
 

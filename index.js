@@ -62,7 +62,7 @@ function showChoices() {
           if (capitalLetters) {
            const finalThreeCharacters = threeCharacters.toUpperCase();
            text = finalThreeCharacters;
-           console.log(finalThreeCharacters);
+           
            shapeAndColor();
           }else {
             const {threeCharacters, capitalLetters } = answer;
@@ -125,7 +125,7 @@ function showChoices() {
     const shape = new ShapeClass (shapeOption, colorShape);
     const shapeSvg =shape.shapeRenderResult;
     
-    console.log(shapeSvg);
+   
   
     const lSvg = `
       <svg  
