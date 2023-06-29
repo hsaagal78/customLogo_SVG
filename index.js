@@ -9,7 +9,7 @@ let text ='';
 
 function showChoices() {
           
-  // function randomCharacters() {
+   //displays a message and expects the user to enter their name.
       inquirer
         .prompt([
           {
@@ -20,21 +20,21 @@ function showChoices() {
         ])
         .then((answer) => {
           const { userName } = answer;
-          const splitName = userName.split('');
+          const splitName = userName.split('');//This line splits the userName string into an array of characters.
           const combinations = [];
     
           for (let i = 0; i < 4; i++) {
             const randomPositions = [];
             for (let j = 0; j < 3; j++) {
-              const randomPosition = Math.floor(Math.random() * splitName.length);
-              randomPositions.push(randomPosition);
+              const randomPosition = Math.floor(Math.random() * splitName.length);//This line generates a random position within the range of the splitName array.
+              randomPositions.push(randomPosition);//This line adds the random position to the randomPositions array.
             }
     
-            const combination = randomPositions.map((position) => splitName[position]).join('');
+            const combination = randomPositions.map((position) => splitName[position]).join('');//This line creates a combination of characters by mapping each random position to the corresponding character in splitName and then joining them together.
             combinations.push(combination);
           }
     
-          console.log(combinations);
+          console.log(combinations);//This line prints the combinations array to the console.
           showCapitalLetters()
         })
         .catch((error) => {
@@ -57,16 +57,16 @@ function showChoices() {
           },
         ])
         .then((answer) => {
-          const {threeCharacters, capitalLetters } = answer;
+          const {threeCharacters, capitalLetters } = answer;//his line extracts the threeCharacters and capitalLetters properties from the answer object using destructuring assignment.
     
-          if (capitalLetters) {
+          if (capitalLetters) {//This line checks if capitalLetters is true
            const finalThreeCharacters = threeCharacters.toUpperCase();
-           text = finalThreeCharacters;
+           text = finalThreeCharacters;//This line assigns finalThreeCharacters to the text variable.
            
            shapeAndColor();
           }else {
             const {threeCharacters, capitalLetters } = answer;
-            text = threeCharacters;
+            text = threeCharacters;//This line assigns threeCharacters to the text variable.
             shapeAndColor();
           }
           
@@ -121,9 +121,9 @@ function showChoices() {
       Triangle,
       Rectangle
     };
-    const ShapeClass= shapeClasses[shapeOption];
-    const shape = new ShapeClass (shapeOption, colorShape);
-    const shapeSvg =shape.shapeRenderResult;
+    const ShapeClass= shapeClasses[shapeOption];// This line retrieves the shape class based on the selected shapeOption.
+    const shape = new ShapeClass (shapeOption, colorShape);//This line creates a new instance of the selected shape class.
+    const shapeSvg =shape.shapeRenderResult;//This line retrieves the SVG representation of the shape.
     
    
   
@@ -135,7 +135,7 @@ function showChoices() {
       </svg>
     `;
   
-    fs.writeFile('logo.svg', lSvg, (err) => {
+    fs.writeFile('logo.svg', lSvg, (err) => {//This line writes the SVG content to a file named logo.svg.
       if (err) {
         console.error('Error creating logo:', err);
         return;
