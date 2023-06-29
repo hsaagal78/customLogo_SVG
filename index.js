@@ -1,12 +1,9 @@
 const inquirer = require('inquirer');
-const dayjs = require('dayjs');
 const fs = require('fs');
-const { v4 } = require ('uuid');
 const {ShapeLogo,Triangle,Circle, Rectangle} = require('./lib/shapes');
 const { describe, it, expect } = require('jest');
-const databaseShape = require('./models/dataBaseShapes');
 const logo = require('./logo.svg');
-// const { text } = require('stream/consumers');
+
 let text ='';
 
 
@@ -18,7 +15,7 @@ function showChoices() {
           {
             type: 'input',
             name: 'userName',
-            message: 'Enter your Name:',
+            message: 'Welcome! You have arrived at the logo creation platform, Enter your Name:',
           },
         ])
         .then((answer) => {
@@ -51,12 +48,12 @@ function showChoices() {
           {
             type: 'input',
             name: 'threeCharacters',
-            message: 'There are some example base on your name Enter up to [3] characters for your logo',
+            message: 'Based on your name, we have generated some examples for your logo. Please enter up to [3] characters to personalize your logo:',
           },
           {
             type: 'confirm',
             name: 'capitalLetters',
-            message: 'Do you want Capital letter for your logo?',
+            message: 'Would you like to use capital letters for your logo?',
           },
         ])
         .then((answer) => {
@@ -87,16 +84,16 @@ function showChoices() {
       {
         type: 'input',
         name: 'colorText',
-        message: 'Enter text color',
+        message: 'Please enter the text color for your logo.',
       },
       {
         type: 'input',
         name: 'colorShape',
-        message: 'Enter Shape color',
+        message: 'Please enter the shape color for your logo.',
       },
       {
         type: 'list',
-        message: 'Choose the shape',
+        message: 'Please choose the shape',
         name: 'shapeOption',
         choices: ['Circle', 'Triangle', 'Rectangle'],
       },
