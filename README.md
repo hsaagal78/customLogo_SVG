@@ -1,3 +1,4 @@
+
 # Custom Logo Generator SVG
 
 This is a custom logo generator application that allows users to generate logos based on their input.
@@ -62,3 +63,4 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 ## Contact
 
 For any inquiries, please contact me at hsagal78@gmail.com.
+
